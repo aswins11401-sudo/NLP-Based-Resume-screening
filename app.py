@@ -129,9 +129,10 @@ def score_resumes(job_description: str, resumes: list[str], role: str):
 st.set_page_config(page_title="Resume Similarity Screener", page_icon="📄", layout="wide")
 st.title("📄 Resume Similarity Screener")
 st.caption("Upload PDF resumes, provide a job description, and get ranked candidates instantly.")
-st.subheader("Developed by Aswin S")
-st.markdown("linkedin : www.linkedin.com/in/aswin-sgl")
-st.markdown("Github : https://github.com/aswins11401-sudo")
+with st.expander('INFO ℹ️'):
+    st.subheader("Developed by :red[Aswin S]")
+    st.link_button(":blue[LinkedIn]","https://www.linkedin.com/in/aswin-sgl")
+    st.link_button(":red[GitHub]","https://github.com/aswins11401-sudo")
 # ── Sidebar ────────────────────────────────────────────────────────────────────
 with st.sidebar:
     st.header("⚙️ Configuration")
@@ -239,3 +240,10 @@ if run:
                 with col2:
                     st.markdown("**❌ Missing Skills**")
                     st.write(r["missing"] if r["missing"] else ["None"])
+                    
+with st.expander('INFO'):
+    st.markdown('''
+                BERT score is calculated based on the :red[Cosine similarity] between JD and Resumes \n
+                Final Scores are calculated as :blue[0.7 * BERT score] + :red[0.3 * Skill score] \n
+                Skill score is calculated Based on the :blue[number of skills matched] / :red[number of skills in JD] \n
+                :blue[Matched Skills] and :red[Missing Skills] should give a clear understanding of the ranking of the resume''')
