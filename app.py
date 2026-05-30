@@ -131,8 +131,11 @@ st.title("📄 Resume Similarity Screener")
 st.caption("Upload PDF resumes, provide a job description, and get ranked candidates instantly.")
 with st.expander('INFO ℹ️'):
     st.subheader("Developed by :red[Aswin S]")
-    st.link_button(":blue[LinkedIn]","https://www.linkedin.com/in/aswin-sgl")
-    st.link_button(":red[GitHub]","https://github.com/aswins11401-sudo")
+    col1,col2 = st.columns(2)
+    with col1:
+        st.link_button(":blue[LinkedIn]","https://www.linkedin.com/in/aswin-sgl")
+    with col2:
+        st.link_button(":red[GitHub]","https://github.com/aswins11401-sudo")
 # ── Sidebar ────────────────────────────────────────────────────────────────────
 with st.sidebar:
     st.header("⚙️ Configuration")
