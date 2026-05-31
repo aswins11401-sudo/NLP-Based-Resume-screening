@@ -131,7 +131,7 @@ st.title("📄 Resume Similarity Screener")
 st.caption("Upload PDF resumes, provide a job description, and get ranked candidates instantly.")
 with st.expander('INFO ℹ️'):
     st.subheader("Developed by :red[Aswin S]")
-    col1,col2 = st.columns(2)
+    col1,col2,col3,col4,col5 = st.columns(5)
     with col1:
         st.link_button(":blue[LinkedIn]","https://www.linkedin.com/in/aswin-sgl")
     with col2:
